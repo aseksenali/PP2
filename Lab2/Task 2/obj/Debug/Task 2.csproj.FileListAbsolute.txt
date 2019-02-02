@@ -1,0 +1,6 @@
+C:\Users\Aset\source\repos\ConsoleApp4\Task 2\bin\Debug\Task 2.exe.config
+C:\Users\Aset\source\repos\ConsoleApp4\Task 2\bin\Debug\Task 2.exe
+C:\Users\Aset\source\repos\ConsoleApp4\Task 2\bin\Debug\Task 2.pdb
+C:\Users\Aset\source\repos\ConsoleApp4\Task 2\obj\Debug\Task 2.csproj.CoreCompileInputs.cache
+C:\Users\Aset\source\repos\ConsoleApp4\Task 2\obj\Debug\Task 2.exe
+C:\Users\Aset\source\repos\ConsoleApp4\Task 2\obj\Debug\Task 2.pdb
