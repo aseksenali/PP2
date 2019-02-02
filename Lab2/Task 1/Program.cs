@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace ConsoleApp4
+namespace Task_1
 {
     class Program
     {
