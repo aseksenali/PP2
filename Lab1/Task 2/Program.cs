@@ -8,19 +8,27 @@ namespace ConsoleApp1
 {
     class Student
     {
-        string name;
-        int id;
-        int year;
+        private string name;
+        private int id;
+        private int year;
         public Student(string name, int id)
         {
             this.name = name;
             this.id = id;
+            this.year = 2018;
         }
 
-        public void printInfo()
+        public void PrintInfo()
         {
-            Console.WriteLine(name + " " + id);
+            Console.WriteLine("ID: " + id);
+            Console.WriteLine("Имя: " + name);
+            Console.WriteLine("Год: " + year);
+        }
+
+        public void YearInc()
+        {
             year++;
+            Console.WriteLine("OK!");
         }
     }
 
@@ -28,7 +36,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
+            Student s = new Student("Адиль", 1);
+            s.PrintInfo();
+            s.YearInc();
+            s.PrintInfo();
         }
     }
 }
