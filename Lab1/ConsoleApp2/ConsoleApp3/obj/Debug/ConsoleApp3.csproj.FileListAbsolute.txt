@@ -1,6 +1,0 @@
-C:\Users\Aset\source\repos\ConsoleApp2\ConsoleApp3\bin\Debug\ConsoleApp3.exe.config
-C:\Users\Aset\source\repos\ConsoleApp2\ConsoleApp3\bin\Debug\ConsoleApp3.exe
-C:\Users\Aset\source\repos\ConsoleApp2\ConsoleApp3\bin\Debug\ConsoleApp3.pdb
-C:\Users\Aset\source\repos\ConsoleApp2\ConsoleApp3\obj\Debug\ConsoleApp3.csproj.CoreCompileInputs.cache
-C:\Users\Aset\source\repos\ConsoleApp2\ConsoleApp3\obj\Debug\ConsoleApp3.exe
-C:\Users\Aset\source\repos\ConsoleApp2\ConsoleApp3\obj\Debug\ConsoleApp3.pdb
