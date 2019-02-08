@@ -10,6 +10,7 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
+            //Reading all data
             int n = int.Parse(Console.ReadLine());
             string[] s = Console.ReadLine().Split();
             int[] a = new int[n];
@@ -17,14 +18,18 @@ namespace ConsoleApp2
             {
                 a[i] = int.Parse(s[i]);
             }
-
+            //Creating a result
             int[] b = Repeat(a);
             for (int i = 0; i < b.Length; i++)
             {
                 Console.Write(b[i] + " ");
             }
         }
-
+        /// <summary>
+        /// Methodm which returns the array a[] with elements repeated twice.
+        /// </summary>
+        /// <param name="a">The initial array</param>
+        /// <returns></returns>
         public static int[] Repeat(int[] a)
         {
             int[] b = new int[a.Length * 2];
