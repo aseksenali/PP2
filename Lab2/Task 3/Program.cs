@@ -11,11 +11,16 @@ namespace Task_3
     {
         static void Main(string[] args)
         {
+            //Путь к папке
             string path = Console.ReadLine();
             DirectoryInfo file = new DirectoryInfo(path);
             PrintInfo(file, 0);
         }
-
+        /// <summary>
+        /// Функция для создания дерева папок и файлов.
+        /// </summary>
+        /// <param name="file">Рассматриваемый объект FileSystemInfo</param>
+        /// <param name="k">Количество пробелов при переходе к следующему уровню иерархии</param>
         private static void PrintInfo(FileSystemInfo file, int k)
         {
             if (file.GetType() == typeof(DirectoryInfo))
@@ -25,7 +30,7 @@ namespace Task_3
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
             }
-
+            
             Console.WriteLine(new string(' ', k) + file.Name);
             if (file.GetType() == typeof(DirectoryInfo))
             {

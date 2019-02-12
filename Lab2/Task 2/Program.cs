@@ -9,6 +9,11 @@ namespace Task_2
 {
     class Program
     {
+        /// <summary>
+        /// Функция для перевода строки текста в массив чисел
+        /// </summary>
+        /// <param name="text">Преобразуемый текст</param>
+        /// <returns></returns>
         private static int[] F(string text)
         {
             List<int> res = new List<int>();
@@ -22,7 +27,9 @@ namespace Task_2
 
         static void Main(string[] args)
         {
+            //Массив чисел
             int[] numbers;
+            //Реализация потоков чтения и записи в файлы
             using (FileStream fs = new FileStream(@"D:\Users\Aset\Desktop\PP2\files\Task_2_input.txt", FileMode.Open, FileAccess.Read))
             {
                 using (StreamReader sr = new StreamReader(fs))
@@ -34,6 +41,7 @@ namespace Task_2
             using (FileStream fs2 = new FileStream(@"D:\Users\Aset\Desktop\PP2\files\Task_2_output.txt", FileMode.OpenOrCreate, FileAccess.Write)) {
                 using (StreamWriter sw = new StreamWriter(fs2))
                 {
+                    //Проверка чисел на простоту, а также запись всех простых чисел в отдельный файл
                     foreach (var x in numbers)
                     {
                         bool prime = true;

@@ -11,9 +11,10 @@ namespace Task_4
     {
         static void Main(string[] args)
         {
+            //Папки откуда и куда копировать
             string path = Console.ReadLine();
             string path1 = Console.ReadLine();
-
+            //Все необходимые потоки чтения и записи файлов
             FileStream fs = new FileStream(path, FileMode.Create, FileAccess.ReadWrite);
             FileStream fs2 = new FileStream(path1, FileMode.Create, FileAccess.ReadWrite);
             StreamWriter sw = new StreamWriter(fs);
@@ -21,11 +22,13 @@ namespace Task_4
             StreamWriter sw2 = new StreamWriter(fs2);
 
             sw.Write("Original");
-
+            //Чтения текста из первого файла
             string text = sr.ReadToEnd();
+            //Запись текста в другой файл
             sw2.Write(text);
+            //Удаление исходного файла
             File.Delete(path);
-
+            //Закрытие всех потоков
             sr.Close();
             sw2.Close();
             sw.Close();
