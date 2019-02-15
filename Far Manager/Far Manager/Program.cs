@@ -28,6 +28,7 @@ namespace Far_Manager
             Stack<Layer> history = new Stack<Layer>();
             FarMode mode = FarMode.DIR;
             DirectoryInfo root = new DirectoryInfo(@"D:\");
+            bool run = true;
             //в history засовываем папку root.
             history.Push(
                 new Layer
@@ -37,7 +38,7 @@ namespace Far_Manager
                     SelectedItem = 0
                 });
             //цикл программы
-            while (true)
+            while (run)
             {
                 //автоматически обновлять интерфейс после каждого нажатия клавиши
                 if (mode == FarMode.DIR)
@@ -62,6 +63,11 @@ namespace Far_Manager
                         break;
                     //на backspace - вернуться в прошлую папку, или закрыть файл
                     case ConsoleKey.Backspace:
+                        if (history.Count == 1)
+                        {
+                            break;
+                        }
+
                         if (mode == FarMode.DIR)
                         {
                             history.Pop();
@@ -101,6 +107,35 @@ namespace Far_Manager
                                 Console.WriteLine(sr.ReadToEnd());
                             }
                         }
+                        break;
+                    //на escape завершить выполнение программы
+                    case ConsoleKey.Escape:
+                        run = false;
+                        break;
+                    //на R переименовать файл или папку
+                    case ConsoleKey.R:
+                        string parentpath;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        int a = history.Peek().SelectedItem;
+                        Console.Clear();
+                        Console.Write("Введите новое имя файла: ");
+                        string txt = Console.ReadLine();
+                        if (a < history.Peek().Directories.Count)
+                        {
+                            parentpath = history.Peek().Directories[a].Parent.FullName;
+                            Directory.Move(history.Peek().Directories[a].FullName, Path.Combine(parentpath, txt));
+                            DirectoryInfo df = new DirectoryInfo(parentpath);
+                            history.Peek().Directories = df.EnumerateDirectories().ToList();
+                        }
+                        else
+                        {
+                            parentpath = history.Peek().Files[a - history.Peek().Directories.Count].FullName.Remove(history.Peek().Files[a - history.Peek().Directories.Count].FullName.Length - history.Peek().Files[a - history.Peek().Directories.Count].Name.Length);
+                            File.Copy(history.Peek().Files[a - history.Peek().Directories.Count].FullName, Path.Combine(parentpath, txt));
+                            File.Delete(history.Peek().Files[a - history.Peek().Directories.Count].FullName);
+                            DirectoryInfo df = new DirectoryInfo(parentpath);
+                            history.Peek().Files = df.EnumerateFiles().ToList();
+                        }
+
                         break;
                 }
             }
