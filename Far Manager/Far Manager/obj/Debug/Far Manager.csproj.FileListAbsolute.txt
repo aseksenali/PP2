@@ -5,3 +5,10 @@ C:\Users\Aset\source\repos\Far Manager\Far Manager\obj\Debug\Far Manager.csprojA
 C:\Users\Aset\source\repos\Far Manager\Far Manager\obj\Debug\Far Manager.csproj.CoreCompileInputs.cache
 C:\Users\Aset\source\repos\Far Manager\Far Manager\obj\Debug\Far Manager.exe
 C:\Users\Aset\source\repos\Far Manager\Far Manager\obj\Debug\Far Manager.pdb
+D:\Users\Aset\Desktop\PP2\Far Manager\Far Manager\bin\Debug\Far Manager.exe.config
+D:\Users\Aset\Desktop\PP2\Far Manager\Far Manager\bin\Debug\Far Manager.exe
+D:\Users\Aset\Desktop\PP2\Far Manager\Far Manager\bin\Debug\Far Manager.pdb
+D:\Users\Aset\Desktop\PP2\Far Manager\Far Manager\obj\Debug\Far Manager.csprojAssemblyReference.cache
+D:\Users\Aset\Desktop\PP2\Far Manager\Far Manager\obj\Debug\Far Manager.csproj.CoreCompileInputs.cache
+D:\Users\Aset\Desktop\PP2\Far Manager\Far Manager\obj\Debug\Far Manager.exe
+D:\Users\Aset\Desktop\PP2\Far Manager\Far Manager\obj\Debug\Far Manager.pdb

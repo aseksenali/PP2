@@ -123,17 +123,23 @@ namespace Far_Manager
                         if (a < history.Peek().Directories.Count)
                         {
                             parentpath = history.Peek().Directories[a].Parent.FullName;
-                            Directory.Move(history.Peek().Directories[a].FullName, Path.Combine(parentpath, txt));
-                            DirectoryInfo df = new DirectoryInfo(parentpath);
-                            history.Peek().Directories = df.EnumerateDirectories().ToList();
+                            if (txt != history.Peek().Directories[a].Name)
+                            {
+                                Directory.Move(history.Peek().Directories[a].FullName, Path.Combine(parentpath, txt));
+                                DirectoryInfo df = new DirectoryInfo(parentpath);
+                                history.Peek().Directories = df.EnumerateDirectories().ToList();
+                            }
                         }
                         else
                         {
                             parentpath = history.Peek().Files[a - history.Peek().Directories.Count].FullName.Remove(history.Peek().Files[a - history.Peek().Directories.Count].FullName.Length - history.Peek().Files[a - history.Peek().Directories.Count].Name.Length);
-                            File.Copy(history.Peek().Files[a - history.Peek().Directories.Count].FullName, Path.Combine(parentpath, txt));
-                            File.Delete(history.Peek().Files[a - history.Peek().Directories.Count].FullName);
-                            DirectoryInfo df = new DirectoryInfo(parentpath);
-                            history.Peek().Files = df.EnumerateFiles().ToList();
+                            if (txt != history.Peek().Files[a - history.Peek().Directories.Count].Name)
+                            {
+                                File.Copy(history.Peek().Files[a - history.Peek().Directories.Count].FullName, Path.Combine(parentpath, txt));
+                                File.Delete(history.Peek().Files[a - history.Peek().Directories.Count].FullName);
+                                DirectoryInfo df = new DirectoryInfo(parentpath);
+                                history.Peek().Files = df.EnumerateFiles().ToList();
+                            }
                         }
 
                         break;
