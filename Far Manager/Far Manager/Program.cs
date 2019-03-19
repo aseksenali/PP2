@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Threading;
 
 namespace Far_Manager
 {
@@ -29,6 +28,7 @@ namespace Far_Manager
             FarMode mode = FarMode.DIR;
             DirectoryInfo root = new DirectoryInfo(@"D:\");
             bool run = true;
+
             //в history засовываем папку root.
             history.Push(
                 new Layer
@@ -37,6 +37,7 @@ namespace Far_Manager
                     Files = root.GetFiles().ToList(),
                     SelectedItem = 0
                 });
+
             //цикл программы
             while (run)
             {
@@ -53,14 +54,17 @@ namespace Far_Manager
                     case ConsoleKey.Delete:
                         history.Peek().DeleteSelectedItem();
                         break;
+
                     //на вверх листать папки наверх
                     case ConsoleKey.UpArrow:
                         history.Peek().SelectedItem--;
                         break;
+
                     //на вниз - листать вниз
                     case ConsoleKey.DownArrow:
                         history.Peek().SelectedItem++;
                         break;
+
                     //на backspace - вернуться в прошлую папку, или закрыть файл
                     case ConsoleKey.Backspace:
                         if (history.Count == 1)
@@ -78,6 +82,7 @@ namespace Far_Manager
                             Console.ForegroundColor = ConsoleColor.White;
                         }
                         break;
+
                     //на enter - открыть папку или файл
                     case ConsoleKey.Enter:
                         int x = history.Peek().SelectedItem;
@@ -108,10 +113,12 @@ namespace Far_Manager
                             }
                         }
                         break;
+
                     //на escape завершить выполнение программы
                     case ConsoleKey.Escape:
                         run = false;
                         break;
+
                     //на R переименовать файл или папку
                     case ConsoleKey.R:
                         string parentpath;
@@ -141,7 +148,6 @@ namespace Far_Manager
                                 history.Peek().Files = df.EnumerateFiles().ToList();
                             }
                         }
-
                         break;
                 }
             }

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UserName>Aset</UserName>
+  <score>0</score>
+  <levelNumber>0</levelNumber>
+  <snake>
+    <hist>52 10 </hist>
+    <size>1</size>
+    <X_position>52</X_position>
+    <Y_position>10</Y_position>
+    <prev>TOP</prev>
+  </snake>
+</Game>
